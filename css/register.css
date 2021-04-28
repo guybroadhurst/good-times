@@ -1,0 +1,73 @@
+
+.register-image {
+  background-image: url(../img/location.jpg);
+  background-position: center bottom;
+}
+
+/* override the default input styles (which is quite a lot of stuff) */
+input {
+  border: none;
+  line-height: 1.5;
+  font-size: 16px;
+  height: 48px;
+  width: 100%;
+  padding: 0 12px;
+  outline: none;
+  color: var(--charcoal);
+}
+
+input::placeholder {
+  color: var(--light-grey);
+}
+
+.bg-orange {
+  background-color: var(--light-orange);
+}
+
+.register {
+  /* using grid to stack the child boxes on top of each other */
+  display: grid;
+  place-items: center;
+  /* chop off the edges of the box when we slide the front box up */
+  overflow: hidden;
+}
+
+.front,
+.back {
+  /* stacking the boxes on top of each other */
+  grid-area: 1/1;
+}
+
+.front {
+  transition: transform 0.5s ease;
+}
+
+/* we toggle the .slide-up class using javascript*/
+.front.slide-up {
+  transform: translateY(-100%);
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--orange);
+  color: var(--white);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.05em;
+  border: none;
+  padding: 24px 72px;
+  font-family: var(--bold);
+  cursor: pointer;
+  outline: none;
+}
+
+.button-small {
+  font-size: 14px;
+  padding: 12px 20px;
+}
+
+.button-outline {
+  background-color: transparent;
+  border: solid 2px var(--orange);
+  color: var(--orange);
+}
